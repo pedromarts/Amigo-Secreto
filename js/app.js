@@ -4,6 +4,11 @@ let amigos = []
 // Botão adicionar
 function adicionar () {
     let amigo = document.getElementById ('nome-amigo');
+    if (amigo.value == ''){
+        alert ('Informe o nome do amigo!');
+        return;
+    }
+
     let lista =document.getElementById ('lista-amigos');
     amigos.push (amigo.value);  //adicionando ao array amigos = []  
     if (lista.textContent == "") {
@@ -18,6 +23,11 @@ function adicionar () {
 
 // Botão  Sortear
 function sortear (){
+    if (amigos.length < 4) {
+        alert ('adicione no mínimo 4 amigos!');
+        return;
+    }
+    
     embaralha (amigos);
     let sorteio = document.getElementById ('lista-sorteio');
 
